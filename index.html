@@ -80,6 +80,16 @@
     const value = Object.fromEntries(data.entries());
     const details = `name: ${value.name}\nage: ${value.age}\nrecommend: ${value.recommend}`;
     console.log(details);
+
+    const response = await fetch("/.netlify/functions/saveform", {
+      method: 'GET',
+      headers: {
+          'Content-Type': 'application/json',
+        },
+    })
+    if (response.status == 200) {
+      console.log(await response.text());
+    }
   }
 
   </script>
