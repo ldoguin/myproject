@@ -44,9 +44,17 @@
           </p>
 
           <label
-            ><input
+            >
+            <input
+              id="hiddenRecommend"
               name="recommend"
-              value="recommend"
+              value="false"
+              type="hidden"
+            />
+            <input
+              id="recommend"
+              name="recommend"
+              value="true"
               type="checkbox"
               class="input-checkbox"
             />yes</label
@@ -60,14 +68,18 @@
         </div>
       </form>
     </div>
-    
+
 <script>
   const form = document.getElementById('survey-form');
   form.addEventListener('submit', handleForm);
 
   async function handleForm(e) {
     e.preventDefault()
-    alert("Form Submission !")
+    
+    const data = new FormData(e.target);
+    const value = Object.fromEntries(data.entries());
+    const details = `name: ${value.name}\nage: ${value.age}\nrecommend: ${value.recommend}`;
+    console.log(details);
   }
 
   </script>
