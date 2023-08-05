@@ -82,11 +82,13 @@
     console.log(details);
 
     const response = await fetch("/.netlify/functions/saveform", {
-      method: 'GET',
+      method: 'POST',
       headers: {
           'Content-Type': 'application/json',
         },
+        body: JSON.stringify(value),
     })
+
     if (response.status == 200) {
       console.log(await response.text());
     }
