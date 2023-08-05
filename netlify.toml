@@ -1,3 +1,3 @@
 [build]
-  command = "npm rebuild && strip --strip-debug ./node_modules/couchbase/build/Release/couchbase_impl.node"
+  command = "npm install && strip --strip-debug ./node_modules/couchbase/build/Release/couchbase_impl.node"
   publish = "."
