@@ -1,5 +1,5 @@
 {
   "dependencies": {
-    "couchbase": "^4.2.5"
+    "couchbase": "4.2.4"
   }
 }
